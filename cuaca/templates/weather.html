@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/weather.css') }}" />
+  <link href="//fonts.googleapis.com/css?family=Finger Paint&subset=latin" rel="stylesheet" type="text/css">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/normalize.css') }}" />
+</head>
+
+<body>
+  <br>
+  <div id="weather-widget">
+    <div class="weather-data">
+      <div id="weather-city">
+        <h1>{{ location }}</h1>
+      </div>
+      <hr>
+      <div id="weather-temp">
+        {{ temp }} °C
+        &nbsp;&nbsp;<img src="static/images/temp.png">
+      </div>
+      <hr>
+      <div id="weather-description">
+        {{ skytext }}
+        &nbsp;&nbsp;<img src="static/images/sky.png">
+      </div>
+      <hr>
+      <div id="wind-speed">
+        {{ wind }}
+        &nbsp;&nbsp;<img src="static/images/wind.png">
+      </div>
+    </div>
+  </div>
+</body>

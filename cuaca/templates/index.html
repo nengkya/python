@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Some title</title>
+    <link href="//fonts.googleapis.com/css?family=ABeeZee&subset=latin" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Finger Paint&subset=latin" rel="stylesheet" type="text/css">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+    <body>
+      <br />
+      <div class='cen'>
+        <h1 id="main_title">Weather Search</h1>
+        <form id="standard"  method="POST" action="/weather_info">
+          <input type="text" class="text-input" name="weather" placeholder="City" maxlength="200">
+          <input type="submit" value="search" class="search-button">
+        </form>
+      </div>
+    </body>
+</html>

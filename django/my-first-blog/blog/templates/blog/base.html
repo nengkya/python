@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html>
+
+ <head>
+  <title> Django Girls blog </title>
+  <link rel  = "stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"                    >
+  <link rel  = "stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"              >
+  <link href = '//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel = 'stylesheet' type = 'text/css'>
+  <link rel  = "stylesheet" href="{% static 'css/blog.css' %}"                                                        >
+ </head>
+
+ <body>
+  <div class = "page-header">
+       <!--
+       Being able to create new posts just by clicking a link is awesome ! But right now, anyone who visits your site will be able to make a new blog post, and that's probably not something you want.
+       Let's make it so the button shows up for you, but not for anyone else.
+       We're going to add another {% if %} tag to this,
+       which will make the link show up only for users who are logged into the admin.
+       -->
+       {% if user.is_authenticated %}
+        <a href = "{% url 'post_new' %}" class = "top-menu"> <span class = "glyphicon glyphicon-plus"> </span> </a>
+       {% endif %}
+   <h1> <a href = "/">Django Girls Blog </a> </h1>
+  </div>
+ 
+  <div class = "content container">
+   <div class = "row">
+    <div class = "col-md-8">
+     {% block content %}
+     {% endblock %}
+    </div>
+   </div>
+  </div>
+
+ </body>
+</html>
